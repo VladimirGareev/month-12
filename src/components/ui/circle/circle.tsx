@@ -2,9 +2,9 @@ import React from "react";
 import styles from "./circle.module.css";
 import { ElementStates } from "../../../types/element-states";
 
-interface CircleProps {
+export interface CircleProps {
   state?: ElementStates;
-  letter?: string;
+  letter?: string|number;
   head?: string | React.ReactElement | null;
   index?: number;
   tail?: string | React.ReactElement | null;

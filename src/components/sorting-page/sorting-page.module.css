@@ -1,0 +1,36 @@
+.flexContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 969px;
+}
+
+.radioMargin {
+    margin-left: 50px;
+}
+
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.columns {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 50px;
+    height: 360px;
+}
+
+.button{
+    width: 210px;
+    text-decoration: white;
+    margin-left: 12px;
+}
+
+.marginLeft {
+    margin-left: 80px;
+}
