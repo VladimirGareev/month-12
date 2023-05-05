@@ -94,21 +94,21 @@ export const StackPage: React.FC = () => {
      extraClass={styles.button}
      onClick={pushing}
      isLoader={buttonLoader==='add'}
-     disabled={loader}
+     disabled={loader||!value}
      />
      <Button
      text="Удалить"
      extraClass={styles.button}
     onClick={popping}
     isLoader={buttonLoader==='delete'}
-     disabled={loader}
+     disabled={loader||!elements.length}
      />
      <Button
      text="Очистить"
      extraClass={`${styles.button} ${styles.marginLeft}`}
      onClick={clearing}
      isLoader={buttonLoader === 'clear'}
-     disabled={loader}
+     disabled={loader||!elements.length}
      />
     </div>
     <div className={styles.flexContainer}>

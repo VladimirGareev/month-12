@@ -125,7 +125,7 @@ export const QueuePage: React.FC = () => {
      extraClass={styles.button}
       onClick={adding}
       isLoader={buttonLoader==='add'}
-      disabled={loader||queue.getTail()! === 7}
+      disabled={loader||queue.getTail()! === 7||!value}
      />
      <Button
      text="Удалить"

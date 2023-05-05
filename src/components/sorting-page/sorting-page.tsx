@@ -25,6 +25,9 @@ export const SortingPage: React.FC = () => {
     setLoader(false);
     setDirection(null);
   };
+  useEffect(()=>{
+    setArray(randomArr())
+  },[])
   
   return (
     <SolutionLayout title="Сортировка массива">
@@ -33,12 +36,12 @@ export const SortingPage: React.FC = () => {
         <RadioInput label="Выбор"
         checked={sortingType==="selection"}
         onChange={()=>setSortingType("selection")}
-        disabled={loader}
+        disabled={loader||!array.length}
         />
         <RadioInput label="Пузырёк"extraClass={styles.radioMargin}
         checked={sortingType==="bubble"}
         onChange={()=>setSortingType("bubble")}
-        disabled={loader}
+        disabled={loader||!array.length}
         />
         <Button
         extraClass = {`${styles.radioMargin} ${styles.button}`}
@@ -48,7 +51,7 @@ export const SortingPage: React.FC = () => {
           setLoaderPlace('ascending');
           runSorting(Direction.Ascending)}}
         isLoader={loaderPlace === 'ascending'}
-        disabled={loader}
+        disabled={loader||!array.length}
         />
         <Button
         text="По убыванию"
@@ -57,7 +60,7 @@ export const SortingPage: React.FC = () => {
           setLoaderPlace('descending')
           runSorting(Direction.Descending)}}
         extraClass={`ml-12 ${styles.button}`}
-        disabled = {loader} 
+        disabled = {loader||!array.length} 
         isLoader={loaderPlace === 'descending'}
         />
         <Button

@@ -10,7 +10,7 @@ import { TElement } from "../../types/elements";
 
 export const StringComponent: React.FC = () => {
 
-const [string, setString] = useState('');
+const [string, setString] = useState<string>('');
 
 const [elements, setElements] = useState<TElement[]>([])
 
@@ -40,6 +40,7 @@ const runReverse = async () => {
      extraClass={styles.button}
      onClick={runReverse}
      isLoader={loader}
+     disabled={string===''||typeof(string)!=="string"}
      />
     </div>
     <div className={styles.flexContainer}>

@@ -14,7 +14,7 @@ export const FibonacciPage: React.FC = () => {
   
   const [loader, setLoader] = useState(false);
 
-  const isDisabled = (Number(value)<=19)?false:true;
+  const isDisabled = (value&&Number(value)<=19)?false:true;
 
  const makeFib = async () => {
     setLoader(true);
@@ -61,6 +61,7 @@ export const FibonacciPage: React.FC = () => {
                 extraClass={styles.circle}
                 letter={element}
                 index={index}
+                key={index}
               />
             ))}
     </div>
