@@ -1,5 +1,6 @@
 import { TElement } from "../../types/elements";
 import { ElementStates } from "../../types/element-states";
+import { time } from "console";
 
 export const arrayFromString = (value: string): TElement[]  =>  
     value.split("").map((symb, index) =>({
@@ -17,11 +18,11 @@ export const makeReverse = async (array:TElement[], changeState:any, timeout:num
     let start = 0;
     let end = array.length - 1;
     while(start<=end) {
-        await makeTimeout (1000);
+        await makeTimeout (timeout);
         array[start].state = ElementStates.Changing;
         array[end].state = ElementStates.Changing;
         await changeState(array.map((element)=>({...element})));
-        await makeTimeout (1000);
+        await makeTimeout (timeout);
         let tmp = array[start];
         array[start]=array[end];
         array[end]=tmp;
@@ -31,4 +32,9 @@ export const makeReverse = async (array:TElement[], changeState:any, timeout:num
         start++;
         end--;
     }
+    const arrayUpd:string[] = [];
+        array.forEach((elem)=>{
+            arrayUpd.push(elem.letter as string)})
+    return array;
+    
 }

@@ -16,7 +16,7 @@ const [elements, setElements] = useState<TElement[]>([])
 
 const [loader, setLoader] = useState(false);
 
-const runReverse = async () => {
+ const runReverse = async () => {
   setLoader(true);
   setString("");
   const initialOrder: TElement[] = arrayFromString(string);

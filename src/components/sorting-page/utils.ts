@@ -22,7 +22,7 @@ export const randomArr = (): TElementBar[] => {
     return arr
 }
 
-export const sortSelection = async (arr:TElementBar[], changeState:any, direction:Direction, loaderState:any) =>{
+export const sortSelection = async (arr:TElementBar[], changeState:any, direction:Direction, loaderState:any, timeout:number) =>{
     const {length} = arr;
     arr.map((element)=>element.state=ElementStates.Default)
     for (let i = 0; i < length - 1; i++) {
@@ -46,7 +46,7 @@ export const sortSelection = async (arr:TElementBar[], changeState:any, directio
                     arr[j].state = ElementStates.Default
                 }
             }
-          await makeTimeout(500);
+          await makeTimeout(timeout);
         }
           swap(arr, i, maxInd);
           arr[maxInd].state = ElementStates.Default;
@@ -58,10 +58,16 @@ export const sortSelection = async (arr:TElementBar[], changeState:any, directio
           }
           changeState(arr.map((element)=>({...element})));
           loaderState('');
+
+          const arrayUpd:number[] = [];
+            arr.forEach((elem)=>{
+            arrayUpd.push(elem.number as number)})
+
+            return arrayUpd;
       }
 
 
-export const bubbleSorting = async (arr:TElementBar[], changeState:any, direction:Direction, loaderState:any) => {
+export const bubbleSorting = async (arr:TElementBar[], changeState:any, direction:Direction, loaderState:any, timeout:number) => {
     arr.map((element)=>element.state=ElementStates.Default)
     for (let i = 0; i < arr.length; i++) {
         
@@ -70,7 +76,7 @@ export const bubbleSorting = async (arr:TElementBar[], changeState:any, directio
             arr[j].state = ElementStates.Changing;
             arr[j+1].state = ElementStates.Changing;
             changeState(arr.map((element)=>({...element})));
-            await  makeTimeout(500);
+            await  makeTimeout(timeout);
             if (direction === Direction.Descending){if(arr[j].number < arr[j+1].number) {
                 swap(arr, j, j+1)
             }} else {if(arr[j].number > arr[j+1].number) {
@@ -84,21 +90,13 @@ export const bubbleSorting = async (arr:TElementBar[], changeState:any, directio
         
         
         }
-        await  makeTimeout(500);
+        await  makeTimeout(timeout);
         arr[0].state = ElementStates.Modified;
         changeState(arr.map((element)=>({...element})));
         loaderState('');
+        const arrayUpd:number[] = [];
+            arr.forEach((elem)=>{
+            arrayUpd.push(elem.number as number)})
+
+            return arrayUpd;
 }
-
-
-// const bubbleSort = (arr: number[]) => {
-//     // до сортировки arr = [9,3,4,1,2,0];
-//     for (let i = 0; i < arr.length; i++) {
-//         for (let j = 0; j < arr.length - i - 1; j++) {
-//             if (arr[i] < arr[j + 1]) { // сортируем элементы по возрастанию
-//                 swap(arr[i], arr[j + 1]);
-//             }
-//         }
-//     }
-//     // после arr = [0, 1, 2, 3, 4, 9]
-// } 

@@ -10,7 +10,7 @@ export type TElement = {
 }
 
 export type TElementBar = {
-    number: number;
+    number: number|string;
     id: number;
     state: ElementStates;
 }

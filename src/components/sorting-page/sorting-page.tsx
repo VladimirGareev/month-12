@@ -20,13 +20,13 @@ export const SortingPage: React.FC = () => {
     setLoader(true);
     //setLoaderPosition(direction);
     sortingType === "selection"
-      ? await sortSelection(array, setArray, direction, setLoaderPlace )
-      : await bubbleSorting(array, setArray, direction, setLoaderPlace )
+      ? await sortSelection(array, setArray, direction, setLoaderPlace, 500 )
+      : await bubbleSorting(array, setArray, direction, setLoaderPlace, 500 )
     setLoader(false);
     setDirection(null);
   };
-  useEffect(()=>{
-    setArray(randomArr())
+  useEffect(() => {
+    setArray(randomArr());
   },[])
   
   return (
@@ -74,7 +74,7 @@ export const SortingPage: React.FC = () => {
           {array.length > 0 &&
             array.map((element) => (
               <Column
-                index={element.number}
+                index={element.number as number}
                 key={element.id}
                 state={element.state}
                 extraClass="ml-10"
