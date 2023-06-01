@@ -20,6 +20,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "cypress:open": "./node_modules/.bin/cypress open",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -46,6 +47,7 @@
   "devDependencies": {
     "@types/react-router-dom": "^5.3.3",
     "cypress": "^12.13.0",
+    "eslint-plugin-cypress": "^2.13.3",
     "jest": "^27.5.1"
   }
 }
