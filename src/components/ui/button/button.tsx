@@ -34,13 +34,14 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <button
+      data-testid="button"
       className={className}
       type={type}
       disabled={isLoader || disabled}
       {...rest}
     >
       {isLoader ? (
-        <img className={styles.loader_icon} src={loaderIcon} alt="Загрузка." />
+        <img className={styles.loader_icon} src={loaderIcon} alt="Загрузка." data-testid="loader"/>
       ) : (
         <>
           {sorting && currentIcon}

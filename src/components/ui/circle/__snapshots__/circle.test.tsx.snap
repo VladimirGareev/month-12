@@ -1,0 +1,289 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`circle component testing Circle отрисовывается корректно c Index 1`] = `
+<div
+  class="content "
+  data-testid="circle"
+>
+  <div
+    class="text text_type_input text_color_input mb-4 absolute head element"
+    data-testid="head"
+  />
+  <div
+    class="circle   default"
+    data-testid="small"
+  >
+    <p
+      class="text text_type_circle text_color_input letter"
+    />
+  </div>
+  <p
+    class="text text_type_input text_color_input mt-4 absolute index"
+    data-testid="index"
+  >
+    1
+  </p>
+  <div
+    class="text text_type_input text_color_input mt-4 absolute tail60 element"
+    data-testid="tail"
+  />
+</div>
+`;
+
+exports[`circle component testing Circle отрисовывается корректно c буквами 1`] = `
+<div
+  class="content "
+  data-testid="circle"
+>
+  <div
+    class="text text_type_input text_color_input mb-4 absolute head element"
+    data-testid="head"
+  />
+  <div
+    class="circle   default"
+    data-testid="small"
+  >
+    <p
+      class="text text_type_circle text_color_input letter"
+    >
+      ABCD
+    </p>
+  </div>
+  <p
+    class="text text_type_input text_color_input mt-4 absolute index"
+    data-testid="index"
+  />
+  <div
+    class="text text_type_input text_color_input mt-4 absolute tail30 element"
+    data-testid="tail"
+  />
+</div>
+`;
+
+exports[`circle component testing Circle отрисовывается корректно c текстом в HEAD 1`] = `
+<div
+  class="text text_type_input text_color_input mb-4 absolute head string"
+  data-testid="head"
+>
+  ABCD
+</div>
+`;
+
+exports[`circle component testing Circle отрисовывается корректно c текстом в TAIL 1`] = `
+<div
+  class="text text_type_input text_color_input mt-4 absolute tail30 string"
+  data-testid="tail"
+>
+  ABCD
+</div>
+`;
+
+exports[`circle component testing Circle отрисовывается корректно c элементом в HEAD 1`] = `
+<div
+  class="text text_type_input text_color_input mb-4 absolute head element"
+  data-testid="head"
+>
+  <div
+    class="content "
+    data-testid="circle"
+  >
+    <div
+      class="text text_type_input text_color_input mb-4 absolute head element"
+      data-testid="head"
+    />
+    <div
+      class="circle  small default"
+      data-testid="small"
+    >
+      <p
+        class="text text_type_circle text_color_input letter"
+      >
+        ABCD
+      </p>
+    </div>
+    <p
+      class="text text_type_input text_color_input mt-4 absolute index"
+      data-testid="index"
+    />
+    <div
+      class="text text_type_input text_color_input mt-4 absolute tail30 element"
+      data-testid="tail"
+    />
+  </div>
+</div>
+`;
+
+exports[`circle component testing Circle отрисовывается корректно c элементом в TAIL 1`] = `
+<div
+  class="text text_type_input text_color_input mt-4 absolute tail30 element"
+  data-testid="tail"
+>
+  <div
+    class="content "
+    data-testid="circle"
+  >
+    <div
+      class="text text_type_input text_color_input mb-4 absolute head element"
+      data-testid="head"
+    />
+    <div
+      class="circle  small default"
+      data-testid="small"
+    >
+      <p
+        class="text text_type_circle text_color_input letter"
+      >
+        ABCD
+      </p>
+    </div>
+    <p
+      class="text text_type_input text_color_input mt-4 absolute index"
+      data-testid="index"
+    />
+    <div
+      class="text text_type_input text_color_input mt-4 absolute tail30 element"
+      data-testid="tail"
+    />
+  </div>
+</div>
+`;
+
+exports[`circle component testing Circle отрисовывается корректно без буквы 1`] = `
+<div
+  class="content "
+  data-testid="circle"
+>
+  <div
+    class="text text_type_input text_color_input mb-4 absolute head element"
+    data-testid="head"
+  />
+  <div
+    class="circle   default"
+    data-testid="small"
+  >
+    <p
+      class="text text_type_circle text_color_input letter"
+    />
+  </div>
+  <p
+    class="text text_type_input text_color_input mt-4 absolute index"
+    data-testid="index"
+  />
+  <div
+    class="text text_type_input text_color_input mt-4 absolute tail30 element"
+    data-testid="tail"
+  />
+</div>
+`;
+
+exports[`circle component testing Circle отрисовывается корректно в состоянии changing 1`] = `
+<div
+  class="content "
+  data-testid="circle"
+>
+  <div
+    class="text text_type_input text_color_input mb-4 absolute head element"
+    data-testid="head"
+  />
+  <div
+    class="circle   changing"
+    data-testid="small"
+  >
+    <p
+      class="text text_type_circle text_color_input letter"
+    />
+  </div>
+  <p
+    class="text text_type_input text_color_input mt-4 absolute index"
+    data-testid="index"
+  />
+  <div
+    class="text text_type_input text_color_input mt-4 absolute tail30 element"
+    data-testid="tail"
+  />
+</div>
+`;
+
+exports[`circle component testing Circle отрисовывается корректно в состоянии default 1`] = `
+<div
+  class="content "
+  data-testid="circle"
+>
+  <div
+    class="text text_type_input text_color_input mb-4 absolute head element"
+    data-testid="head"
+  />
+  <div
+    class="circle   default"
+    data-testid="small"
+  >
+    <p
+      class="text text_type_circle text_color_input letter"
+    />
+  </div>
+  <p
+    class="text text_type_input text_color_input mt-4 absolute index"
+    data-testid="index"
+  />
+  <div
+    class="text text_type_input text_color_input mt-4 absolute tail30 element"
+    data-testid="tail"
+  />
+</div>
+`;
+
+exports[`circle component testing Circle отрисовывается корректно в состоянии modified 1`] = `
+<div
+  class="content "
+  data-testid="circle"
+>
+  <div
+    class="text text_type_input text_color_input mb-4 absolute head element"
+    data-testid="head"
+  />
+  <div
+    class="circle   modified"
+    data-testid="small"
+  >
+    <p
+      class="text text_type_circle text_color_input letter"
+    />
+  </div>
+  <p
+    class="text text_type_input text_color_input mt-4 absolute index"
+    data-testid="index"
+  />
+  <div
+    class="text text_type_input text_color_input mt-4 absolute tail30 element"
+    data-testid="tail"
+  />
+</div>
+`;
+
+exports[`circle component testing Circle отрисовывается корректно пропсом isSmall 1`] = `
+<div
+  class="content "
+  data-testid="circle"
+>
+  <div
+    class="text text_type_input text_color_input mb-4 absolute head element"
+    data-testid="head"
+  />
+  <div
+    class="circle  small default"
+    data-testid="small"
+  >
+    <p
+      class="text text_type_circle text_color_input letter"
+    />
+  </div>
+  <p
+    class="text text_type_input text_color_input mt-4 absolute index"
+    data-testid="index"
+  />
+  <div
+    class="text text_type_input text_color_input mt-4 absolute tail30 element"
+    data-testid="tail"
+  />
+</div>
+`;

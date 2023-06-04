@@ -5,6 +5,10 @@
   width: 100%;
 }
 
+.limit {
+  display: flex;
+}
+
 .input {
   outline: none;
   border: 1px solid var(--text-input-placeholder);
