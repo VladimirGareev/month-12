@@ -1,41 +1,42 @@
 import { should } from "chai";
+import { CircleStyles, button, circleInner } from "../const";
 
 describe("string page testing", () => {
-  beforeEach(() => cy.visit("http://localhost:3000/recursion"));
+  beforeEach(() => cy.visit("recursion"));
   it('если в инпуте пусто - кнопка "Развернуть" неактивна', () => {
     cy.get("input").should("be.empty");
-    cy.get('[data-testid="button"]').should("be.disabled");
+    cy.get(button).should("be.disabled");
   });
 
   it("проверка работы алгоритма разворота строки", () => {
     cy.get("input").type("12345");
-    cy.get('[data-testid="button"]').click();
-    cy.get('[data-testid="small"]')
+    cy.get(button).click();
+    cy.get(circleInner)
       .should("have.length", 5)
       .each((element, index) => {
         cy.wrap(element)
           .should("contain", `${index + 1}`)
-          .and("have.css", "border", "4px solid rgb(0, 50, 255)");
+          .and("have.css", "border", CircleStyles.Default);
       });
-    cy.get('[data-testid="small"]').each((element, index) => {
+    cy.get(circleInner).each((element, index) => {
       if (index === 0 || index === 4) {
         cy.wrap(element).should(
           "have.css",
           "border",
-          "4px solid rgb(210, 82, 225)"
+          CircleStyles.Changing
         );
       }
     });
-    cy.get('[data-testid="small"]').each((element, index) => {
+    cy.get(circleInner).each((element, index) => {
       if (index === 0 || index === 4) {
         cy.wrap(element).should(
           "have.css",
           "border",
-          "4px solid rgb(127, 224, 81)"
+          CircleStyles.Modified
         );
       }
     });
-    cy.get('[data-testid="small"]').each((element, index) => {
+    cy.get(circleInner).each((element, index) => {
       if (index === 0) {
         cy.wrap(element).should("contain", `5`);
       }
@@ -43,25 +44,25 @@ describe("string page testing", () => {
         cy.wrap(element).should("contain", `1`);
       }
     });
-    cy.get('[data-testid="small"]').each((element, index) => {
+    cy.get(circleInner).each((element, index) => {
       if (index === 1 || index === 3) {
         cy.wrap(element).should(
           "have.css",
           "border",
-          "4px solid rgb(210, 82, 225)"
+          CircleStyles.Changing
         );
       }
     });
-    cy.get('[data-testid="small"]').each((element, index) => {
+    cy.get(circleInner).each((element, index) => {
       if (index === 1 || index === 3) {
         cy.wrap(element).should(
           "have.css",
           "border",
-          "4px solid rgb(127, 224, 81)"
+          CircleStyles.Modified
         );
       }
     });
-    cy.get('[data-testid="small"]').each((element, index) => {
+    cy.get(circleInner).each((element, index) => {
       if (index === 1) {
         cy.wrap(element).should("contain", `4`);
       }
@@ -69,25 +70,25 @@ describe("string page testing", () => {
         cy.wrap(element).should("contain", `2`);
       }
     });
-    cy.get('[data-testid="small"]').each((element, index) => {
+    cy.get(circleInner).each((element, index) => {
       if (index === 2) {
         cy.wrap(element).should(
           "have.css",
           "border",
-          "4px solid rgb(210, 82, 225)"
+          CircleStyles.Changing
         );
       }
     });
-    cy.get('[data-testid="small"]').each((element, index) => {
+    cy.get(circleInner).each((element, index) => {
       if (index === 2) {
         cy.wrap(element).should(
           "have.css",
           "border",
-          "4px solid rgb(127, 224, 81)"
+          CircleStyles.Modified
         );
       }
     });
-    cy.get('[data-testid="small"]').each((element, index) => {
+    cy.get(circleInner).each((element, index) => {
       if (index === 2) {
         cy.wrap(element).should("contain", `3`);
       }

@@ -1,24 +1,26 @@
+import { button, circleInner } from "../const";
+
 describe("string page testing", () => {
-  beforeEach(() => cy.visit("http://localhost:3000/fibonacci"));
+  beforeEach(() => cy.visit("fibonacci"));
   it('если в инпуте пусто - кнопка "Развернуть" неактивна', () => {
     cy.get("input").should("be.empty");
-    cy.get('[data-testid="button"]').should("be.disabled");
+    cy.get(button).should("be.disabled");
   });
   it("проверка генерации чисел Фибоначчи", () => {
     cy.get("input").type("5");
     cy.get("button").contains("Развернуть").click();
 
-    cy.get('[data-testid="small"]')
+    cy.get(circleInner)
       .should("have.length", 1)
       .and("contain", "1");
-    cy.get('[data-testid="small"]')
+    cy.get(circleInner)
       .should("have.length", 2)
       .each((element, index) => {
         if (index === 0 || index === 1) {
           cy.wrap(element).contains("1");
         }
       });
-    cy.get('[data-testid="small"]')
+    cy.get(circleInner)
       .should("have.length", 3)
       .each((element, index) => {
         if (index === 0 || index === 1) {
@@ -28,7 +30,7 @@ describe("string page testing", () => {
           cy.wrap(element).contains("2");
         }
       });
-    cy.get('[data-testid="small"]')
+    cy.get(circleInner)
       .should("have.length", 4)
       .each((element, index) => {
         if (index === 0 || index === 1) {
@@ -41,7 +43,7 @@ describe("string page testing", () => {
           cy.wrap(element).contains("3");
         }
       });
-    cy.get('[data-testid="small"]')
+    cy.get(circleInner)
       .should("have.length", 5)
       .each((element, index) => {
         if (index === 0 || index === 1) {
